@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+	<html>
+		<head>
+			<title>Christine's Map</title>
+			<style>
+		#map {
+			width:100%;
+			height:400px;
+			}
+			</style>
+		</head>
+			<body>
+			<h3>My Google Maps Demo</h3>
+			<div id="map"></div>
+			<script>
+				function initMap(){
+					var mapDiv = document.getElementById('map');
+					var map = new google.maps.Map(mapDiv,{
+						center:{lat: 30.279,lng:-97.7381},
+						zoom:15,mapTypeId:'hybrid'
+					});
+<!--Capitol building-->
+					var markerCapitol=new google.maps.Marker({
+						position:{lat:30.2747,lng:-97.7404},map:map});
+					var contentString='<div id="content">'+'The capital of Texas was finished in 1888.'+
+					' It has attracted tourists from all around Texas since then'+
+					' and is very noticeable even today.'
+					var infowindow1=new google.maps.InfoWindow({
+						content:contentString
+						});
+					markerCapitol.addListener('click',function(){
+						infowindow1.open(map,markerCapitol);
+					});
+<!--Bullock History Museum-->
+					var markerBullock=new google.maps.Marker({
+						position:{lat:30.2804,lng:-97.7392},map:map});
+		 			var contentString='<div id="content">'+'The Bullock Texas State History Museum is dedicated to showing the history of Texas.'+
+					'It has 3 floors and opened in 2001. '
+					var infowindow2=new google.maps.InfoWindow({
+						content:contentString
+						});
+					markerBullock.addListener('click',function(){
+						infowindow2.open(map,markerBullock);
+					});
+<!--UT-->
+					var markerUT=new google.maps.Marker({
+						position:{lat:30.2849,lng:-97.7341},map:map});
+					var contentString='<div id="content">'+'The University of Texas at Austin is a quarter of a mile away from downtown Austin.'+
+					'Founded in 1883, it ranks as #52 in the 2016 edition of Best Colleges is National Universities.'
+					var infowindow3=new google.maps.InfoWindow({
+						content:contentString
+						});
+					markerUT.addListener('click',function(){
+						infowindow3.open(map,markerUT);
+					});
+<!--waterloo neighborhood park-->
+					var markerwaterloo=new google.maps.Marker({
+						position:{lat:30.274,lng:-97.735},map:map});
+					var contentString='<div id="content">'+'Waterloo Neighborhood Park was named after the town that preceded Austin.'+
+					'It is located net to Waller Creek and is close to downtown Austin.'
+					var infowindow4=new google.maps.InfoWindow({
+						content:contentString
+						});
+					markerwaterloo.addListener('click',function(){
+						infowindow4.open(map,markerwaterloo);
+					});
+<!--governor mansion-->
+					var markergov=new google.maps.Marker({
+						position:{lat:30.2728,lng:-97.7431},map:map});
+					var contentString='<div id="content">'+'This is where the Governor of Texas lives. It is open from 2-4pm.'
+					var infowindow5=new google.maps.InfoWindow({
+						content:contentString
+						});
+					markergov.addListener('click',function(){
+						infowindow5.open(map,markergov);
+					});
+<!--Scholz Garten-->
+					var markerScholz=new google.maps.Marker({
+						position:{lat:30.2777,lng:-97.7363},map:map});
+					var contentString='<div id="content">'+'Scholz Garten is a German bar and has been open since 1866.'
+					var infowindow6=new google.maps.InfoWindow({
+						content:contentString
+						});
+					markerScholz.addListener('click',function(){
+						infowindow6.open(map,markerScholz);
+					});
+<!--clay pit-->
+					var markerclay=new google.maps.Marker({
+						position:{lat:30.2789,lng:-97.7435},map:map});
+					var contentString='<div id="content">'+'The Clay Pit is an Indian restaurant with decent food and prices.'
+					var infowindow7=new google.maps.InfoWindow({
+						content:contentString
+						});
+					markerclay.addListener('click',function(){
+						infowindow7.open(map,markerclay);
+					});
+					};
+			</script>
+			<script async defer
+				src="https://maps.googleapis.com/maps/api/js?callback=initMap">
+			</script>
+			</body>
+	</html>
